@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { Component} from 'react';
+import CustomersList from './components/customers';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    customers: [
+      {
+        id_customer: 1,
+        type: "private",
+        email: "dalbasiny0@g.co",
+        num_phone: "+46 (642) 859-6500",
+        st_address: "Colorado",
+        num_address: "48",
+        num_duns: "41-254-6037",
+        country: "Sweden",
+        city: "Delaware",
+        postal_code: "597 96",
+        date_discharge: "27/08/2020"
+      },
+    ]
+  }
+  render() {
+    return (
+      <div className="App">
+        <CustomersList customers={this.state.customers}/>
+      </div>
+    );
+  }
 }
 
 export default App;
