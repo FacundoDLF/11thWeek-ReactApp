@@ -1,15 +1,16 @@
 import React, { Component} from 'react';
+import CustomerItem from './CustomerItem';
+import PropTypes from 'prop-types';
 
 class CustomersList extends Component {
     render() {
         return this.props.customers.map((customers) => (
-            <h3>{customers.id_customer}
-            {customers.type}
-            {customers.email}
-            {customers.num_phone}
-            {customers.city}</h3>
+            <CustomerItem key={customers.id_customer} customers={customers}/>
         ));
     }
+}
+CustomersList.propTypes = {
+    customers: PropTypes.array.isRequired
 }
 
 export default CustomersList;
