@@ -9,13 +9,13 @@ export default class AddCustomer extends Component {
                 name="title"
                 style={{flex: '10', padding: '5px'}}
                 placeholder="Add Customer ..."
-            />
-            <input
-            type="submit"
-            value="Submit"
-            className="btn"
-            style={{flex: '1'}}
-            />
+                />
+                <input
+                type="submit"
+                value="Add"
+                className="btn"
+                style={{flex: '1'}}
+                />
             </form>
         )
     }

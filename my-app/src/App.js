@@ -41,9 +41,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="container">
         <Header />
         <AddCustomer/>
         <CustomersList customers={this.state.customers} selected={this.selected} delCustomer={this.delCustomer}/>
+        </div>
       </div>
     );
   }
