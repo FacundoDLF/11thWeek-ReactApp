@@ -3,9 +3,10 @@ import CustomerItem from './CustomerItem';
 import PropTypes from 'prop-types';
 
 class CustomersList extends Component {
+
     render() {
         return this.props.customers.map((customers) => (
-            <CustomerItem key={customers.id_customer} customers={customers}/>
+            <CustomerItem key={customers.id_customer} customers={customers} selected={this.props.selected}/>
         ));
     }
 }

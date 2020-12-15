@@ -3,17 +3,27 @@ import PropTypes from 'prop-types';
 
 
 export class CustomerItem extends Component {
-    // getStyle = () => {
-    //     return {
-    //         backgroundColor: 'rgb(0, 0, 155)',
-    //         padding: '10px',
-    //         borderBottom: '1px #ccc dotted',
-    //     },
-    // }
+    getStyle = () => {
+        return {
+            backgroundColor: this.props.customers.selected ? 'rgb(0, 245, 0)' : 'rgb(180, 0, 0)',
+            color: 'rgb(255,255,255)',
+            padding: '10px',
+            borderBottom: '1px #ccc dotted',
+            // textDecoration: this.props.customers.selected ? 'line-through' : 'none',
+            display: 'flex',
+        }
+    }
     render() {
+        const {id_customer, type, email, num_phone } = this.props.customers;
         return (
-            <div style={itemStyle}>
-                <p>{ this.props.customers.city}</p>
+            <div style={this.getStyle()}>
+                <p >
+                    <input type="checkbox" onChange={this.props.selected.bind(this, id_customer)}
+                    /> {' '}
+                    {type} {' '}
+                    {email} {' '}
+                    {num_phone} {' '}
+                </p>
             </div>
         )
     }
@@ -22,12 +32,5 @@ export class CustomerItem extends Component {
 CustomerItem.propTypes = {
     customers: PropTypes.object.isRequired
 }
-
-const itemStyle = {
-    backgroundColor: 'rgb(180, 0, 0)',
-    color: 'rgb(255,255,255)',
-    padding: '10px',
-    borderBottom: '1px #ccc dotted',
-};
 
 export default CustomerItem

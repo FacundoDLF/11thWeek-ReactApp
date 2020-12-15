@@ -9,7 +9,7 @@ class App extends Component {
       {
         id_customer: 1,
         type: "private",
-        email: "dalbasiny0@g.co",
+        email: "dalbasiny0@gmail.co",
         num_phone: "+46 (642) 859-6500",
         st_address: "Colorado",
         num_address: "48",
@@ -17,14 +17,25 @@ class App extends Component {
         country: "Sweden",
         city: 'Delaware',
         postal_code: "597 96",
-        date_discharge: "27/08/2020"
-      },
+        date_discharge: "27/08/2020",
+        selected: false,
+      }
     ]
+  }
+
+  selected = (id_customer) => {
+    this.setState({ customers: this.state.customers.map(customers => {
+      if(customers.id_customer === id_customer) {
+        customers.selected = !customers.selected
+      }
+      return customers;
+    })})
+      console.log(id_customer);
   }
   render() {
     return (
       <div className="App">
-        <CustomersList customers={this.state.customers}/>
+        <CustomersList customers={this.state.customers} selected={this.selected}/>
       </div>
     );
   }
