@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import CustomersList from './components/Customers';
-
+import Header from './layout/Header';
 import './App.css';
 
 class App extends Component {
@@ -40,6 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <CustomersList customers={this.state.customers} selected={this.selected} delCustomer={this.delCustomer}/>
       </div>
     );
