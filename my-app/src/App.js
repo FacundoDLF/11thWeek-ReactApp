@@ -15,7 +15,7 @@ class App extends Component {
         num_address: "48",
         num_duns: "41-254-6037",
         country: "Sweden",
-        city: "Delaware",
+        city: 'Delaware',
         postal_code: "597 96",
         date_discharge: "27/08/2020"
       },

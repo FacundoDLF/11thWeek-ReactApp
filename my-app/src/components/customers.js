@@ -9,6 +9,7 @@ class CustomersList extends Component {
         ));
     }
 }
+
 CustomersList.propTypes = {
     customers: PropTypes.array.isRequired
 }
