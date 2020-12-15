@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import CustomersList from './components/Customers';
 import Header from './layout/Header';
+import AddCustomer from './components/AddCustomer';
 import './App.css';
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <AddCustomer/>
         <CustomersList customers={this.state.customers} selected={this.selected} delCustomer={this.delCustomer}/>
       </div>
     );
