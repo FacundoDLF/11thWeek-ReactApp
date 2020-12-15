@@ -23,6 +23,7 @@ export class CustomerItem extends Component {
                     {type} {' '}
                     {email} {' '}
                     {num_phone} {' '}
+                    <button onClick={this.props.delCustomer.bind(this, id_customer)} style={btnStyle}>Del</button>
                 </p>
             </div>
         )
@@ -31,6 +32,15 @@ export class CustomerItem extends Component {
 
 CustomerItem.propTypes = {
     customers: PropTypes.object.isRequired
+}
+
+const btnStyle = {
+    backgroundColor: 'rgb(245, 0, 0)',
+    color: 'rgb(255, 255, 255)',
+    border: 'none',
+    padding: '5px 10px',
+    borderRadius: '20%',
+    cursor: 'pointer',
 }
 
 export default CustomerItem

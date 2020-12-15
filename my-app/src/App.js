@@ -32,10 +32,15 @@ class App extends Component {
     })})
       console.log(id_customer);
   }
+
+  delCustomer = (id_customer) => {
+    this.setState({customers: [...this.state.customers.filter(customers => customers.id_customer !== id_customer)] });
+    console.log(id_customer);
+  }
   render() {
     return (
       <div className="App">
-        <CustomersList customers={this.state.customers} selected={this.selected}/>
+        <CustomersList customers={this.state.customers} selected={this.selected} delCustomer={this.delCustomer}/>
       </div>
     );
   }

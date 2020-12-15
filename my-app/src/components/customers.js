@@ -6,7 +6,7 @@ class CustomersList extends Component {
 
     render() {
         return this.props.customers.map((customers) => (
-            <CustomerItem key={customers.id_customer} customers={customers} selected={this.props.selected}/>
+            <CustomerItem key={customers.id_customer} customers={customers} selected={this.props.selected} delCustomer={this.props.delCustomer}/>
         ));
     }
 }
