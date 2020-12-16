@@ -38,12 +38,21 @@ class App extends Component {
     this.setState({customers: [...this.state.customers.filter(customers => customers.id_customer !== id_customer)] });
     console.log(id_customer);
   }
+
+  AddCustomer = (type) => {
+    const newCustomer = {
+      id_customer: 4,
+      type,
+      selected: false,
+    }
+    this.setState({ customers: [...this.state.customers, newCustomer] });
+  }
   render() {
     return (
       <div className="App">
         <div className="container">
         <Header />
-        <AddCustomer/>
+        <AddCustomer AddCustomer={this.AddCustomer}/>
         <CustomersList customers={this.state.customers} selected={this.selected} delCustomer={this.delCustomer}/>
         </div>
       </div>
